@@ -1,0 +1,42 @@
+MDBoxLayout:
+    orientation: "vertical"
+
+    MDTopAppBar:
+        title: "Enviar Status BAT/LOC"
+
+    MDFloatLayout: 
+        MDLabel:
+            text: "INFORME O IP DO SERVIDOR"
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .8}
+
+        MDTextField:
+            id: ip_server
+            mode: "round"
+            helper_text: "IP Server"
+            pos_hint: {"center_x": .5, "center_y": .75}
+            size_hint_x: 0.8
+
+        MDLabel:
+            text: "INFORME A PORTA DO SERVIDOR"
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .55}
+
+        MDTextField:
+            id: port_server
+            mode: "round"
+            helper_text: "Port Server"
+            pos_hint: {"center_x": .5, "center_y": .50}
+            size_hint_x: 0.8
+
+        MDRaisedButton:
+            text: "Enviar Status Agora"
+            md_bg_color: "green"
+            halign: "center"
+            pos_hint: {"center_x": .5, "center_y": .25}
+            size_hint_x: 0.5
+            on_release: app.enviar()
+            
+        
+
+   
