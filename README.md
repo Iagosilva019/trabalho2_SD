@@ -42,6 +42,7 @@ Você pode baixar e testar o aplicativo diretamente:
 👉 [Clique aqui para baixar o APK](./myapp-0.1-arm64-v8a_armeabi-v7a-debug.apk)
 
 > ⚠️ Pode ser necessário ativar "Instalar apps de fontes desconhecidas" no Android.
+
 > ⚠️ É necessário ativar a permissão de localização.
 
 
