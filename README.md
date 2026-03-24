@@ -39,7 +39,7 @@ Esses dados são enviados via socket TCP para um servidor central desenvolvido e
 
 Você pode baixar e testar o aplicativo diretamente:
 
-👉 [Clique aqui para baixar o APK](./myapp-0.1-arm64-v8a_armeabi-v7a-debug.apk)
+👉 [Clique aqui para baixar o APK](./monitoramento-pervasivo.apk)
 
 > ⚠️ Pode ser necessário ativar "Instalar apps de fontes desconhecidas" no Android.
 
