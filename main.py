@@ -6,14 +6,28 @@ from plyer import battery, gps
 import socket
 
 
+
 class App(MDApp):
     def build(self):
         self.screen = Builder.load_file("main.kv")
         
         return self.screen
     
+   
+
+    def abrir_config_localizacao():
+        Intent = autoclass('android.content.Intent')
+        Settings = autoclass('android.provider.Settings')
+        PythonActivity = autoclass('org.kivy.android.PythonActivity')
+
+        intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+        currentActivity = PythonActivity.mActivity
+        currentActivity.startActivity(intent)
+        
 
     def enviar(self):
+       
+
         ip_server = self.screen.ids.ip_server.text
         port_server = self.screen.ids.port_server.text
         if ip_server == '' or port_server == '':
@@ -37,11 +51,20 @@ class App(MDApp):
         self.localizacao = None
 
         if platform == 'android':
+            from jnius import autoclass
+            from android.permissions import request_permissions, Permission
+
+            request_permissions([
+            Permission.ACCESS_FINE_LOCATION,
+            Permission.ACCESS_COARSE_LOCATION
+            ])
+
             try:
                 gps.configure(on_location=self.on_location, on_status=self.on_status)
                 gps.start()
             except:
                 print("erro gps")
+                self.abrir_config_localizacao()
         else:
             print("GPS: Apenas funciona no Android/iOS")
 
